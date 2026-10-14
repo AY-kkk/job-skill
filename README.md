@@ -11,7 +11,7 @@
 | 阶段 | 可以解决的问题 | 当前状态 |
 |---|---|---|
 | 职业定位 | 盘点经历、识别优势、确定目标岗位 | 规划中 |
-| 简历与材料 | 重组经历、优化简历、准备作品集和求职信 | 规划中 |
+| 简历润色 | 重组经历、优化简历、量化成果、岗位适配与穿帮排查 | 已收录首个 Skill |
 | 岗位研究 | 拆解 JD、评估匹配度、研究公司与业务 | 规划中 |
 | 投递管理 | 记录进度、安排跟进、沉淀岗位信息 | 规划中 |
 | 面试准备 | 研究岗位、公司、产品与竞品，确定问题优先级并打磨回答 | 已收录首个 Skill |
@@ -24,6 +24,7 @@
 
 | Skill | 用途 | 输入 | 主要输出 |
 |---|---|---|---|
+| [`interview-resume-polish`](skills/interview-resume-polish/) | 面向互联网产品、产运、销售等岗位，将候选人真实经历润色为可直接投递的简历表达：归属校验、岗位解码、能力映射、文风重构与穿帮排查 | 本人简历原文、目标 JD、实习/项目素材 | 按能力视角拆模块的润色稿、待补数据清单、穿帮风险提示、60 秒口述版 |
 | [`interview-prep`](skills/interview-prep/) | 面向产品、AI、商业化、运营等业务岗位，完成岗位拆解、公司与产品研究、竞品分析、问题预测和回答准备 | JD、简历、目标公司与准备时间 | 岗位分析、研究材料、问题优先级、回答框架和行动清单 |
 | [`interview-deep-review`](skills/interview-deep-review/) | 对一场面试进行证据驱动的深度复盘，并默认扫描需要进一步研究的知识缺口 | 面试逐字稿；也可附 JD、简历和背景信息 | 全场分析、逐题复盘、核心知识深研、系统性诊断、下一轮准备和行动清单 |
 
@@ -41,6 +42,7 @@ cd job-skill
 以 Codex 为例，可以将目标目录复制到个人 Skills 目录：
 
 ```bash
+cp -R skills/interview-resume-polish ~/.codex/skills/
 cp -R skills/interview-prep ~/.codex/skills/
 cp -R skills/interview-deep-review ~/.codex/skills/
 ```
@@ -52,6 +54,8 @@ cp -R skills/interview-deep-review ~/.codex/skills/
 可以显式指定 Skill：
 
 ```text
+请使用 $interview-resume-polish，上传我的简历和 JD，把这段实习经历润色成可投递的简历模块。
+
 请使用 $interview-prep，结合我的简历和 JD，准备这场 AI 产品经理面试。
 
 请使用 $interview-deep-review，基于这份逐字稿复盘我的一面表现，并帮我准备下一轮。
@@ -65,6 +69,11 @@ cp -R skills/interview-deep-review ~/.codex/skills/
 job-skill/
 ├── README.md
 └── skills/
+    ├── interview-resume-polish/
+    │   ├── README.md
+    │   ├── SKILL.md
+    │   ├── references/
+    │   └── scripts/
     ├── interview-prep/
     │   ├── README.md
     │   ├── SKILL.md
